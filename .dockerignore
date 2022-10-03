@@ -1,0 +1,31 @@
+/.*
+/docs
+/docker
+!/docker/deploy
+!/docker/yml
+!/docker/sh
+*docker*.yml
+*gitlab-ci*yml
+README.md
+package.json
+phpunit.xml
+resources/fonts
+resources/icons
+resources/images
+resources/js
+resources/sass
+server.php
+storage
+tests
+webpack.mix.js
+yarn.lock
+!.babelrc
+
+# Git
+**/.gitignore
+
+# etc.
+**/*node_modules
+**/.DS_Store
+/node_modules
+resources/assets

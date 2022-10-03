@@ -1,0 +1,26 @@
+version: '3.2'
+
+networks:
+  database-network:
+    external: true
+  traefik:
+    external: true
+
+services:
+
+  adminer:
+    image: adminer:latest
+    labels:
+      - "traefik.docker.network=traefik"
+      - "traefik.port=8080"
+      - "traefik.frontend.passHostHeader=true"
+      - "traefik.frontend.headers.SSLProxyHeaders=X-Forwarded-Proto:https"
+      - "traefik.frontend.headers.SSLProxyHeaders=HTTPS:on"
+      - "traefik.enable=true"
+      - "traefik.weight=10"
+      - "traefik.frontend.priority=10"
+      - "traefik.frontend.rule=Host:example.com"
+      - "traefik.frontend.rule=PathPrefix:/database"
+    networks:
+      - database-network
+      - traefik
