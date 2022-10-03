@@ -1,6 +1,6 @@
 ## Ground
 
-Testing ground for DevOps purposes
+Ground
 
 ### Includes 
 - Laravel 7.6
